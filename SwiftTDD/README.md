@@ -10,7 +10,7 @@ $ swift package generate-xcodeproj
 $ open SwiftTDD.xcodeproj
 ```
 
-## 6장 돌아온 모두를 위한 평등
+## 7장 사과와 오렌지
 
 * $5 + 10CHF = $10 (환율 2:1)
 * ~~$5 X 2 = $10~~
@@ -26,4 +26,6 @@ $ open SwiftTDD.xcodeproj
 * ~~공용 equals~~
 * 공용 times
 * Franc과 Dollar 비교하기
+* 통화?
+
 
