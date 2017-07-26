@@ -10,7 +10,7 @@ $ swift package generate-xcodeproj
 $ open SwiftTDD.xcodeproj
 ```
 
-## 11장 모든 악의 근원
+## 12장 드디어, 더하기
 
 * $5 + 10CHF = $10 (환율 2:1)
 * ~~$5 X 2 = $10~~
