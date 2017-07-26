@@ -22,11 +22,11 @@ $ open SwiftTDD.xcodeproj
 * Equal null
 * Equal object
 * ~~5CHF X 2 = 10CHF~~
-* Dollar/Franc 중복
+* ~~Dollar/Franc 중복~~
 * ~~공용 equals~~
 * ~~공용 times~~
 * ~~Franc과 Dollar 비교하기~~
 * ~~통화?~~
-* testFranceMultiplication 제거
+* ~~testFranceMultiplication 제거~~
 
 

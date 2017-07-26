@@ -11,30 +11,14 @@ class Money {
         return Money(amount: amount * multiplier, currency: currency)
     }
     
-    class func dollar(amount: Int) -> Dollor {
-        return Dollor(amount: amount, currency: "USD")
+    class func dollar(amount: Int) -> Money {
+        return Money(amount: amount, currency: "USD")
     }
     
-    class func franc(amount: Int) -> Franc {
-        return Franc(amount: amount, currency: "CHF")
+    class func franc(amount: Int) -> Money {
+        return Money(amount: amount, currency: "CHF")
     }
 
-}
-
-
-class Dollor: Money {
-    
-    override func times(multiplier: Int) -> Money {
-        return Money(amount: amount * multiplier, currency: currency)
-    }
-}
-
-
-class Franc: Money {
-    
-    override func times(multiplier: Int) -> Money {
-        return Money(amount: amount * multiplier, currency: currency)
-    }
 }
 
 extension Money : Equatable {
