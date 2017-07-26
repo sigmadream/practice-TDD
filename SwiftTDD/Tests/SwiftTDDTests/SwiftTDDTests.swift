@@ -4,23 +4,23 @@ import XCTest
 class SwiftTDDTests: XCTestCase {
     
     func testMultiplication() {
-        let five = Dollor(amount: 5)
-        XCTAssertEqual(Dollor(amount: 10), five.times(multiplier: 2))
-        XCTAssertEqual(Dollor(amount: 15), five.times(multiplier: 3))
+        let five = Money.dollar(amount: 5)
+        XCTAssertEqual(Money.dollar(amount: 10), five.times(multiplier: 2))
+        XCTAssertEqual(Money.dollar(amount: 15), five.times(multiplier: 3))
     }
     
     func testFrancMultiplication() {
-        let five = Franc(amount: 5)
-        XCTAssertEqual(Franc(amount: 10), five.times(multiplier: 2))
-        XCTAssertEqual(Franc(amount: 15), five.times(multiplier: 3))
+        let five = Money.franc(amount: 5)
+        XCTAssertEqual(Money.franc(amount: 10), five.times(multiplier: 2))
+        XCTAssertEqual(Money.franc(amount: 15), five.times(multiplier: 3))
     }
     
     func testEquality() {
-        XCTAssertTrue(Dollor(amount: 5) == Dollor(amount: 5))
-        XCTAssertFalse(Dollor(amount: 5) == Dollor(amount: 6))
-        XCTAssertTrue(Franc(amount: 5) == Franc(amount: 5))
-        XCTAssertFalse(Franc(amount: 5) == Franc(amount: 6))
-        XCTAssertFalse(Dollor(amount: 6) == Franc(amount: 6))
+        XCTAssertTrue(Money.dollar(amount: 5) == Money.dollar(amount: 5))
+        XCTAssertFalse(Money.dollar(amount: 5) == Money.dollar(amount: 6))
+        XCTAssertTrue(Money.franc(amount: 5) == Money.franc(amount: 5))
+        XCTAssertFalse(Money.franc(amount: 5) == Money.franc(amount: 6))
+        XCTAssertFalse(Money.dollar(amount: 6) == Money.franc(amount: 6))
     }
 
 //    static var allTests = [

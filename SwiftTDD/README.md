@@ -10,7 +10,7 @@ $ swift package generate-xcodeproj
 $ open SwiftTDD.xcodeproj
 ```
 
-## 7장 사과와 오렌지
+## 8장 객제 만들기
 
 * $5 + 10CHF = $10 (환율 2:1)
 * ~~$5 X 2 = $10~~
@@ -25,7 +25,8 @@ $ open SwiftTDD.xcodeproj
 * Dollar/Franc 중복
 * ~~공용 equals~~
 * 공용 times
-* Franc과 Dollar 비교하기
+* ~~Franc과 Dollar 비교하기~~
 * 통화?
+* testFranceMultiplication을 지워야 할까?
 
 
