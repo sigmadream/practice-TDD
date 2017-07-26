@@ -1,10 +1,14 @@
-struct Dollor {
-    
-    var amount: Int
+class Money {
+    fileprivate let amount: Int
     
     init(amount: Int) {
         self.amount = amount
     }
+
+}
+
+
+class Dollor: Money {
     
     func times(multiplier: Int) -> Dollor {
         return Dollor(amount: amount * multiplier)
@@ -12,13 +16,8 @@ struct Dollor {
     
 }
 
-struct Franc {
-    
-    var amount: Int
-    
-    init(amount: Int) {
-        self.amount = amount
-    }
+
+class Franc: Money {
     
     func times(multiplier: Int) -> Franc {
         return Franc(amount: amount * multiplier)
@@ -26,14 +25,8 @@ struct Franc {
     
 }
 
-extension Dollor : Equatable {
-    public static func ==(lhs: Dollor, rhs: Dollor) -> Bool {
-        return (lhs.amount == rhs.amount) && (type(of: lhs) == type(of: rhs))
-    }
-}
-
-extension Franc : Equatable {
-    public static func ==(lhs: Franc, rhs: Franc) -> Bool {
+extension Money : Equatable {
+    public static func ==(lhs: Money, rhs: Money) -> Bool {
         return (lhs.amount == rhs.amount) && (type(of: lhs) == type(of: rhs))
     }
 }
