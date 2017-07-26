@@ -5,10 +5,8 @@ class SwiftTDDTests: XCTestCase {
     
     func testMultiplication() {
         let five = Dollor(amount: 5)
-        var product = five.times(multiplier: 2)
-        XCTAssertEqual(10, product.amount)
-        product = five.times(multiplier: 3)
-        XCTAssertEqual(15, product.amount)
+        XCTAssertEqual(Dollor(amount: 10), five.times(multiplier: 2))
+        XCTAssertEqual(Dollor(amount: 15), five.times(multiplier: 3))
     }
     
     func testEquality() {
