@@ -1,4 +1,5 @@
 struct Dollor {
+    
     var amount: Int
     
     init(amount: Int) {
@@ -7,5 +8,12 @@ struct Dollor {
     
     func times(multiplier: Int) -> Dollor {
         return Dollor(amount: amount * multiplier)
+    }
+    
+}
+
+extension Dollor : Equatable {
+    public static func ==(lhs: Dollor, rhs: Dollor) -> Bool {
+        return (lhs.amount == rhs.amount) && (type(of: lhs) == type(of: rhs))
     }
 }

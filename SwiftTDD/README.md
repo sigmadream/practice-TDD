@@ -9,11 +9,15 @@ $ swift package generate-xcodeproj
 $ oepn SwiftTDD.xcodeproj
 ```
 
-# 2장 타락한 객체
+# 3장 모두를 위한 평등
 
 * $5 + 10CHF = $10 (환율 2:1)
 * ~~$5 * 2 = $10~~
 * `amount`를 private로 만들기
 * ~~Dollor 부작용?~~
 * Money 부작용?
+* ~~equals()~~
+* hashCode()
+* Equal null
+* Equal object
 
