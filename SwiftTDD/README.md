@@ -9,10 +9,10 @@ $ swift package generate-xcodeproj
 $ open SwiftTDD.xcodeproj
 ```
 
-## 4장 프라이버시
+## 5장 솔직히 말하자면
 
 * $5 + 10CHF = $10 (환율 2:1)
-* ~~$5 * 2 = $10~~
+* ~~$5 X 2 = $10~~
 * ~~`amount`를 private로 만들기~~
 * ~~Dollor 부작용?~~
 * Money 부작용?
@@ -20,4 +20,8 @@ $ open SwiftTDD.xcodeproj
 * hashCode()
 * Equal null
 * Equal object
+* 5CHF X 2 = 10CHF
+* Dollar/Franc 중복
+* 공용 equals
+* 공용 times
 
