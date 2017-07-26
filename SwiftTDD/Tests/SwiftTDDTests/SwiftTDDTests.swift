@@ -3,9 +3,11 @@ import XCTest
 
 class SwiftTDDTests: XCTestCase {
     func testMultiplication() {
-        var five = Dollor(amount: 5)
-        five.times(multiplier: 2)
-        XCTAssertEqual(10, five.amount)
+        let five = Dollor(amount: 5)
+        var product = five.times(multiplier: 2)
+        XCTAssertEqual(10, product.amount)
+        product = five.times(multiplier: 3)
+        XCTAssertEqual(15, product.amount)
     }
 
 //    static var allTests = [

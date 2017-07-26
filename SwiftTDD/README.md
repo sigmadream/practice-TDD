@@ -9,11 +9,11 @@ $ swift package generate-xcodeproj
 $ oepn SwiftTDD.xcodeproj
 ```
 
-# 1장 다중통화를 지원하는 Money 객체
+# 2장 타락한 객체
 
 * $5 + 10CHF = $10 (환율 2:1)
 * ~~$5 * 2 = $10~~
 * `amount`를 private로 만들기
-* Dollor 부작용?
+* ~~Dollor 부작용?~~
 * Money 부작용?
 
