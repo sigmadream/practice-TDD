@@ -2,14 +2,14 @@ import XCTest
 @testable import SwiftTDD
 
 class SwiftTDDTests: XCTestCase {
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        XCTAssertEqual(SwiftTDD().text, "Hello, World!")
+    func testMultiplication() {
+        var five = Dollor(amount: 5)
+        five.times(multiplier: 2)
+        XCTAssertEqual(10, five.amount)
     }
 
-
-    static var allTests = [
-        ("testExample", testExample),
-    ]
+//    static var allTests = [
+//        ("testExample", testExample),
+//    ]
+    
 }
