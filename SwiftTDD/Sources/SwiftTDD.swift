@@ -1,4 +1,11 @@
+protocol Expression {
+    
+    func reduce(to: String) -> Money
+    
+}
+
 class Money {
+    
     fileprivate let amount: Int
     let currency: String
     
@@ -12,7 +19,7 @@ class Money {
     }
     
     static func +(lhs: Money, rhs: Money) -> Expression {
-        return Money(amount: lhs.amount + rhs.amount, currency: lhs.currency)
+        return Sum(augend: lhs, addend: rhs)
     }
     
     class func dollar(amount: Int) -> Money {
@@ -25,21 +32,42 @@ class Money {
 
 }
 
-protocol Expression {
-}
-
 class Bank {
+    
     func reduce(source: Expression, to: String) -> Money {
-        return Money.dollar(amount: 10)
+        return source.reduce(to: to)
     }
+    
 }
 
-extension Money : Equatable {
-    public static func ==(lhs: Money, rhs: Money) -> Bool {
-        return (lhs.amount == rhs.amount) && (lhs.currency == rhs.currency)
+struct Sum : Expression {
+    
+    let augend: Money
+    let addend: Money
+    
+    func reduce(to: String) -> Money {
+        return Money(amount: self.augend.amount + self.addend.amount, currency: to)
     }
+    
 }
 
 extension Money : Expression {
+    
+    func reduce(to: String) -> Money {
+        return self
+    }
+    
 }
+
+extension Money : Equatable {
+    
+    public static func ==(lhs: Money, rhs: Money) -> Bool {
+        return (lhs.amount == rhs.amount) && (lhs.currency == rhs.currency)
+    }
+    
+}
+
+
+
+
 
