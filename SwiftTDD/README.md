@@ -10,14 +10,14 @@ $ swift package generate-xcodeproj
 $ open SwiftTDD.xcodeproj
 ```
 
-## 13장 진짜로 만들기
+## 14장 바꾸기
 
 * $5 + 10CHF = $10 (환율 2:1)
-* $5 + $5 = $10
+* ~~$5 + $5 = $10~~
 * $5 + $5에서 Money 반환하기
 * ~~Bank.reduce(Money)~~
-* Money에 대한 통화 변환을 수행하는 Reduce
-* Reduce(Bank, String)
+* ~~Money에 대한 통화 변환을 수행하는 Reduce~~
+* ~~Reduce(Bank, String)~~
 * ~~$5 X 2 = $10~~
 * ~~`amount`를 private로 만들기~~
 * ~~Dollor 부작용?~~
