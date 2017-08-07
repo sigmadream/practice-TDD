@@ -56,18 +56,12 @@ class Bank {
     }
     
     func addRate(from: String, to: String, rate: Int) {
-        self.rates[Pair(from: from, to: to)] = rate
+        rates[Pair(from: from, to: to)] = rate
     }
-    
+
     func rate(from: String, to: String) -> Int {
-        if from == to {
-            return 1
-        }
-        
-        guard let rate = self.rates[Pair(from: from, to: to)] else {
-            fatalError()
-        }
-        
+        if from == to { return 1 }
+        let rate: Int = rates[Pair(from: from, to: to)]!
         return rate
     }
     
@@ -96,6 +90,14 @@ struct Sum : Expression {
 struct Pair {
     let from: String
     let to: String
+
+    init(from: String, to: String) {
+        self.from = from
+        self.to = to
+    }
+    
+    var hashValue: Int = 0
+ 
 }
 
 extension Pair: Hashable {
@@ -104,9 +106,6 @@ extension Pair: Hashable {
         return lhs.from == rhs.from && lhs.to == rhs.to
     }
     
-    var hashValue: Int {
-        return 0
-    }
 }
 
 

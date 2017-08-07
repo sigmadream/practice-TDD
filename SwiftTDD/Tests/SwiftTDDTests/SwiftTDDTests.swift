@@ -76,6 +76,25 @@ class SwiftTDDTests: XCTestCase {
         XCTAssertEqual(Money.dollar(amount: 10), result)
     }
     
+    func testSumPlusMoney() {
+        let fiveBucks = Money.dollar(amount: 5)
+        let tenFrancs = Money.franc(amount: 10)
+        let bank = Bank()
+        bank.addRate(from: "CHF", to: "USD", rate: 2)
+        let sum = Sum(augend: fiveBucks, addend: tenFrancs).plus(addend: fiveBucks)
+        let result = bank.reduce(source: sum, to: "USD")
+        XCTAssertEqual(Money.dollar(amount: 15), result)
+    }
+    
+    func testSumTimes() {
+        let fiveBucks = Money.dollar(amount: 5)
+        let tenFrancs = Money.franc(amount: 10)
+        let bank = Bank()
+        bank.addRate(from: "CHF", to: "USD", rate: 2)
+        let sum = Sum(augend: fiveBucks, addend: tenFrancs).times(multiplier: 2)
+        let result = bank.reduce(source: sum, to: "USD")
+        XCTAssertEqual(Money.dollar(amount: 20), result)
+    }
     
 
 //    static var allTests = [
