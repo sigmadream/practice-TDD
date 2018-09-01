@@ -13,6 +13,7 @@
 		EE6539C7213AF11500E971C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE6539C6213AF11500E971C8 /* Assets.xcassets */; };
 		EE6539CA213AF11500E971C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE6539C8213AF11500E971C8 /* LaunchScreen.storyboard */; };
 		EED8C765213AF6C400CBF90A /* MovieStructTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED8C764213AF6C400CBF90A /* MovieStructTests.swift */; };
+		EED8C767213AF8A100CBF90A /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED8C766213AF8A100CBF90A /* Movie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		EE6539D0213AF11500E971C8 /* FilmFestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FilmFestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE6539D6213AF11600E971C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EED8C764213AF6C400CBF90A /* MovieStructTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieStructTests.swift; sourceTree = "<group>"; };
+		EED8C766213AF8A100CBF90A /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +79,9 @@
 		EE6539BE213AF11400E971C8 /* FilmFest */ = {
 			isa = PBXGroup;
 			children = (
+				EED8C769213AFBAC00CBF90A /* Models */,
+				EED8C768213AFBA700CBF90A /* Controllers */,
 				EE6539BF213AF11400E971C8 /* AppDelegate.swift */,
-				EE6539C1213AF11400E971C8 /* ViewController.swift */,
 				EE6539C3213AF11400E971C8 /* Main.storyboard */,
 				EE6539C6213AF11500E971C8 /* Assets.xcassets */,
 				EE6539C8213AF11500E971C8 /* LaunchScreen.storyboard */,
@@ -90,10 +93,42 @@
 		EE6539D3213AF11600E971C8 /* FilmFestTests */ = {
 			isa = PBXGroup;
 			children = (
+				EED8C76B213AFBC400CBF90A /* Test Models */,
+				EED8C76A213AFBBD00CBF90A /* Test Controllers */,
 				EE6539D6213AF11600E971C8 /* Info.plist */,
-				EED8C764213AF6C400CBF90A /* MovieStructTests.swift */,
 			);
 			path = FilmFestTests;
+			sourceTree = "<group>";
+		};
+		EED8C768213AFBA700CBF90A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EE6539C1213AF11400E971C8 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		EED8C769213AFBAC00CBF90A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EED8C766213AF8A100CBF90A /* Movie.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EED8C76A213AFBBD00CBF90A /* Test Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Test Controllers";
+			sourceTree = "<group>";
+		};
+		EED8C76B213AFBC400CBF90A /* Test Models */ = {
+			isa = PBXGroup;
+			children = (
+				EED8C764213AF6C400CBF90A /* MovieStructTests.swift */,
+			);
+			path = "Test Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +235,7 @@
 			files = (
 				EE6539C2213AF11400E971C8 /* ViewController.swift in Sources */,
 				EE6539C0213AF11400E971C8 /* AppDelegate.swift in Sources */,
+				EED8C767213AF8A100CBF90A /* Movie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
