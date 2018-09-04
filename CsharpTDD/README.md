@@ -6,3 +6,5 @@
 - [ ] amount를 private 만들기
 - [X] Dollar 부작용(side effect?)
 - [ ] Mony 반올림
+- [X] equals()
+- [ ] hashCode()
