@@ -8,5 +8,12 @@
 - [ ] Mony 반올림
 - [X] equals()
 - [ ] hashCode()
-- [ ] equal null
-- [ ] equal object
+- [ ] Equal null
+- [ ] Equal object
+- [X] 5CHF * 2 = 10CHF
+- [ ] Dollar/Franc 중복
+- [X] 공용 equals
+- [ ] 공용 times
+- [X] Franc과 Dollar 비교하기
+- [ ] 통화?
+- [ ] `TestFrancMultiplication`를 지워야 할까?
