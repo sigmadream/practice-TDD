@@ -28,12 +28,12 @@ namespace CsharpTDD
 
         public static Money Dollor(int amout)
         {
-            return new Dollar(amout, "USD");
+            return new Money(amout, "USD");
         }
 
         public static Money Franc(int amout)
         {
-            return new Franc(amout, "CHF");
+            return new Money(amout, "CHF");
         }
 
         public override bool Equals(object obj)

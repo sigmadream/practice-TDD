@@ -27,8 +27,6 @@ namespace CsharpTDD
         {
             Assert.True(Money.Dollor(5).Equals(Money.Dollor(5)));
             Assert.False(Money.Dollor(5).Equals(Money.Dollor(6)));
-            Assert.True(Money.Franc(5).Equals(Money.Franc(5)));
-            Assert.False(Money.Franc(5).Equals(Money.Franc(6)));
             Assert.False(Money.Franc(5).Equals(Money.Dollor(5)));
         }
 
@@ -38,5 +36,6 @@ namespace CsharpTDD
             Assert.Equal("USD", Money.Dollor(1).Currency());
             Assert.Equal("CHF", Money.Franc(1).Currency());
         }
+
     }
 }
