@@ -31,5 +31,12 @@ namespace CsharpTDD
             Assert.False(Money.Franc(5).Equals(Money.Franc(6)));
             Assert.False(Money.Franc(5).Equals(Money.Dollor(5)));
         }
+
+        [Fact]
+        public void TestCurrencyString()
+        {
+            Assert.Equal("USD", Money.Dollor(1).Currency());
+            Assert.Equal("CHF", Money.Franc(1).Currency());
+        }
     }
 }

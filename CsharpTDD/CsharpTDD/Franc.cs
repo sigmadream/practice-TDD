@@ -1,15 +1,15 @@
 ﻿namespace CsharpTDD
 {
-    public class Franc: Money
+    internal class Franc: Money
     {
-        public Franc(int amount)
+        public Franc(int amount, string currency): base(amount, currency)
         {
-            this.amount = amount;
         }
 
-        public override Money Times(int multiplier)
+        protected internal override Money Times(int multiplier)
         {
-            return new Franc(amount * multiplier);
+            return Money.Franc(amount * multiplier);
         }
+
     }
 }
