@@ -6,10 +6,5 @@
         {
         }
 
-        protected internal override Money Times(int multiplier)
-        {
-            return Money.Dollor(amount * multiplier);
-        }
-
     }
 }

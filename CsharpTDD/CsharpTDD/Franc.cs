@@ -6,10 +6,5 @@
         {
         }
 
-        protected internal override Money Times(int multiplier)
-        {
-            return Money.Franc(amount * multiplier);
-        }
-
     }
 }

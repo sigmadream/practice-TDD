@@ -4,20 +4,23 @@ using System.Text;
 
 namespace CsharpTDD
 {
-    internal abstract class Money
+    internal class Money
     {
-        protected internal int amount;
+        public int amount;
 
-        protected internal string currency;
+        public string currency;
 
-        protected internal abstract Money Times(int multiplier);
+        public Money Times(int multiplier)
+        {
+            return new Money(amount * multiplier, currency);
+        }
 
-        protected internal string Currency()
+        public string Currency()
         {
             return this.currency;
         }
 
-        protected Money(int amount, string currency)
+        public Money(int amount, string currency)
         {
             this.amount = amount;
             this.currency = currency;
@@ -33,11 +36,10 @@ namespace CsharpTDD
             return new Franc(amout, "CHF");
         }
 
-
         public override bool Equals(object obj)
         {
             Money money = (Money)obj;
-            return amount == money.amount && GetType().Equals(money.GetType());
+            return amount == money.amount && Currency().Equals(money.Currency());
         }
 
     }
