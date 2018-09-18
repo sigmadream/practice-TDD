@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CsharpTDD
 {
-    internal class Money
+    internal class Money : IExpression
     {
         public int amount;
 
@@ -42,5 +42,9 @@ namespace CsharpTDD
             return amount == money.amount && Currency().Equals(money.Currency());
         }
 
+        public IExpression plus(Money addend)
+        {
+            return new Money(amount + addend.amount, currency);
+        }
     }
 }

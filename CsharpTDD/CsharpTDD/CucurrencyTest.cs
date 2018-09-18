@@ -37,5 +37,15 @@ namespace CsharpTDD
             Assert.Equal("CHF", Money.Franc(1).Currency());
         }
 
+        [Fact]
+        public void TestSimpleAddition()
+        {
+            Money five = Money.Dollor(5);
+            IExpression sum = five.plus(five);
+            Bank bank = new Bank();
+            Money reduced = bank.Reduce(sum, "USD");
+            Assert.Equal(Money.Dollor(10), reduced);
+        }
+
     }
 }
