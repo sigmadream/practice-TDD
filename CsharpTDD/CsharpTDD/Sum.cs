@@ -12,7 +12,7 @@ namespace CsharpTDD
             this.addend = addend;
         }
 
-        public Money Reduce(String to)
+        public Money Reduce(Bank bank, string to)
         {
             int amount = augend.amount + addend.amount;
             return new Money(amount, to);

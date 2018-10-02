@@ -74,5 +74,26 @@ namespace CsharpTDD
             Assert.Equal(Money.Dollor(1), result);
         }
 
+        [Fact]
+        public void testIdentityRate()
+        {
+            Assert.Equal(1, new Bank().rate("USD", "USD"));
+        }
+
+        [Fact]
+        public void testReduceMoneyDifferenctCurrency() 
+        {
+            Bank bank = new Bank();
+            bank.AddRate("CHF", "USD", 2);
+            Money result = bank.Reduce(Money.Franc(2), "USD");
+            Assert.Equal(Money.Dollor(1), result);
+        }
+
+        [Fact]
+        public void testArrayEquals()
+        {
+            Assert.Equal(new Object[] { "abc" }, new Object[] { "abc" });
+        }
+
     }
 }

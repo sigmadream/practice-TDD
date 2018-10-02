@@ -47,9 +47,10 @@ namespace CsharpTDD
             return new Sum(this, addend);
         }
 
-        public Money Reduce(string to) 
+        public Money Reduce(Bank bank, string to) 
         {
-            return this;
+            int rate = bank.rate(currency, to);
+            return new Money(amount / rate, to);
         }
     }
 }
