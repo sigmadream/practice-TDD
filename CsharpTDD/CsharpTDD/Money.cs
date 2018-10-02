@@ -42,9 +42,14 @@ namespace CsharpTDD
             return amount == money.amount && Currency().Equals(money.Currency());
         }
 
-        public IExpression plus(Money addend)
+        public IExpression Plus(Money addend)
         {
-            return new Money(amount + addend.amount, currency);
+            return new Sum(this, addend);
+        }
+
+        public Money Reduce(string to) 
+        {
+            return this;
         }
     }
 }
