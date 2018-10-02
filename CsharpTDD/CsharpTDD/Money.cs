@@ -10,7 +10,7 @@ namespace CsharpTDD
 
         public string currency;
 
-        public Money Times(int multiplier)
+        public IExpression Times(int multiplier)
         {
             return new Money(amount * multiplier, currency);
         }
@@ -42,7 +42,7 @@ namespace CsharpTDD
             return amount == money.amount && Currency().Equals(money.Currency());
         }
 
-        public IExpression Plus(Money addend)
+        public IExpression Plus(IExpression addend)
         {
             return new Sum(this, addend);
         }
@@ -52,5 +52,6 @@ namespace CsharpTDD
             int rate = bank.rate(currency, to);
             return new Money(amount / rate, to);
         }
+
     }
 }

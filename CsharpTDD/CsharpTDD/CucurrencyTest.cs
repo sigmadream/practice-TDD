@@ -95,5 +95,18 @@ namespace CsharpTDD
             Assert.Equal(new Object[] { "abc" }, new Object[] { "abc" });
         }
 
+        [Fact]
+        public void testMixedAddition() {
+            //IExpression fiveBucks = Money.Dollor(5);
+            //IExpression tenFrances = Money.Franc(10);
+            IExpression fiveBucks = Money.Dollor(5);
+            IExpression tenFrances = Money.Franc(10);
+
+            Bank bank = new Bank();
+            bank.AddRate("CHF", "USD", 2);
+            Money result = bank.Reduce(fiveBucks.Plus(tenFrances), "USD");
+            Assert.Equal(Money.Dollor(10), result);
+        }
+
     }
 }
