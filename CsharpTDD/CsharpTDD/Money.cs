@@ -10,11 +10,6 @@ namespace CsharpTDD
 
         public string currency;
 
-        public IExpression Times(int multiplier)
-        {
-            return new Money(amount * multiplier, currency);
-        }
-
         public string Currency()
         {
             return this.currency;
@@ -45,6 +40,11 @@ namespace CsharpTDD
         public IExpression Plus(IExpression addend)
         {
             return new Sum(this, addend);
+        }
+
+        public IExpression Times(int multiplier)
+        {
+            return new Money(amount * multiplier, currency);
         }
 
         public Money Reduce(Bank bank, string to) 

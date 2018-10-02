@@ -48,7 +48,7 @@ namespace CsharpTDD
         }
 
         [Fact]
-        public void testPlusReturnsSum()
+        public void TestPlusReturnsSum()
         {
             Money five = Money.Dollor(5);
             IExpression result = five.Plus(five);
@@ -58,7 +58,7 @@ namespace CsharpTDD
         }
 
         [Fact]
-        public void testReduceSum() 
+        public void TestReduceSum() 
         {
             IExpression sum = new Sum(Money.Dollor(3), Money.Dollor(4));
             Bank bank = new Bank();
@@ -67,7 +67,7 @@ namespace CsharpTDD
         }
 
         [Fact]
-        public void testReduceMoney()
+        public void TestReduceMoney()
         {
             Bank bank = new Bank();
             Money result = bank.Reduce(Money.Dollor(1), "USD");
@@ -75,13 +75,13 @@ namespace CsharpTDD
         }
 
         [Fact]
-        public void testIdentityRate()
+        public void TestIdentityRate()
         {
             Assert.Equal(1, new Bank().rate("USD", "USD"));
         }
 
         [Fact]
-        public void testReduceMoneyDifferenctCurrency() 
+        public void TestReduceMoneyDifferenctCurrency() 
         {
             Bank bank = new Bank();
             bank.AddRate("CHF", "USD", 2);
@@ -90,13 +90,13 @@ namespace CsharpTDD
         }
 
         [Fact]
-        public void testArrayEquals()
+        public void TestArrayEquals()
         {
             Assert.Equal(new Object[] { "abc" }, new Object[] { "abc" });
         }
 
         [Fact]
-        public void testMixedAddition() {
+        public void TestMixedAddition() {
             //IExpression fiveBucks = Money.Dollor(5);
             //IExpression tenFrances = Money.Franc(10);
             IExpression fiveBucks = Money.Dollor(5);
@@ -106,6 +106,38 @@ namespace CsharpTDD
             bank.AddRate("CHF", "USD", 2);
             Money result = bank.Reduce(fiveBucks.Plus(tenFrances), "USD");
             Assert.Equal(Money.Dollor(10), result);
+        }
+
+        [Fact]
+        public void TestSumPlusMoney()
+        {
+            IExpression fiveBucks = Money.Dollor(5);
+            IExpression tenFrancs = Money.Franc(10);
+            Bank bank = new Bank();
+            bank.AddRate("CHF", "USD", 2);
+            IExpression sum = new Sum(fiveBucks, tenFrancs).Plus(fiveBucks);
+            Money result = bank.Reduce(sum, "USD");
+            Assert.Equal(Money.Dollor(15), result);
+        }
+
+        [Fact]
+        public void TestSumTImes() 
+        {
+            IExpression fiveBucks = Money.Dollor(5);
+            IExpression tenFrancs = Money.Franc(10);
+            Bank bank = new Bank();
+            bank.AddRate("CHF", "USD", 2);
+            IExpression sum = new Sum(fiveBucks, tenFrancs).Times(2);
+            Money result = bank.Reduce(sum, "USD");
+            Assert.Equal(Money.Dollor(20), result);
+
+        }
+
+        [Fact]
+        public void TestPlusSameurrencyReturnsMoney()
+        {
+            IExpression sum = Money.Dollor(1).Plus(Money.Dollor(1));
+            Assert.True(sum is Sum);
         }
 
     }
