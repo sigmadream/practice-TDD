@@ -4,6 +4,6 @@
 
 ## 테스트 주도 개발로 연습한 언어
 
-* [`Swift`](https://github.com/sigmadream/Study-TDD/tree/added/swift_tdd)
-* [`C#`](https://github.com/sigmadream/Study-TDD/tree/added/csharp_tdd)
+* [`Swift`](https://github.com/sigmadream/Study-TDD/tree/master/CsharpTDD)
+* [`C#`](https://github.com/sigmadream/Study-TDD/tree/master/SwiftTDD)
 
