@@ -17,7 +17,7 @@ $ ./gradlew test
 - [ ]  Sum.plus
 - [ ]  Expression.times
 - [ ]  $5 X 2 = $10
-- [ ]  `amount`를 private로 만들기
+- [X]  `amount`를 private로 만들기
 - [X]  Dollor 부작용?
 - [X]  equals()
 - [ ]  5CHF X 2 = 10CHF
