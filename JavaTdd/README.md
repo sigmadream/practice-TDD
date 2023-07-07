@@ -9,7 +9,7 @@ $ ./gradlew test
 ## TDD List
 
 - [ ]  $5 + 10CHF = $10 (환율 2:1)
-- [ ]  $5 + $5 = $10
+- [X]  $5 + $5 = $10
 - [ ]  $5 + $5에서 Money 반환하기
 - [ ]  Bank.reduce(Money)
 - [ ]  Money에 대한 통화 변환을 수행하는 Reduce
