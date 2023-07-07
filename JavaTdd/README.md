@@ -20,7 +20,7 @@ $ ./gradlew test
 - [X]  `amount`를 private로 만들기
 - [X]  Dollor 부작용?
 - [X]  equals()
-- [ ]  5CHF X 2 = 10CHF
+- [X]  5CHF X 2 = 10CHF
 - [ ]  Dollar/Franc 중복
 - [ ]  공용 equals
 - [ ]  공용 times
