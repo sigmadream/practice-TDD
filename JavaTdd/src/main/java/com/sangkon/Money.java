@@ -1,6 +1,6 @@
 package com.sangkon;
 
-abstract class Money {
+public class Money {
     protected int amount;
     protected String currnecy;
 
@@ -9,11 +9,6 @@ abstract class Money {
         this.currnecy = currnecy;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        Money money = (Money) o;
-        return amount == money.amount && getClass().equals(money.getClass());
-    }
 
     public static Dollar dollar(int amount) {
         return new Dollar(amount, "USD");
@@ -24,9 +19,25 @@ abstract class Money {
     }
 
 
-    abstract Money times(int multiplier);
+    public Money times(int multiplier) {
+        return new Money(amount * multiplier, currnecy);
+    }
 
     public String currency() {
         return currnecy;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        Money money = (Money) o;
+        return amount == money.amount && currency().equals(money.currnecy);
+    }
+
+    @Override
+    public String toString() {
+        return "Money{" +
+                "amount=" + amount +
+                ", currnecy='" + currnecy + '\'' +
+                '}';
     }
 }
