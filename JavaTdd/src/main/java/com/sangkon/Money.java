@@ -9,6 +9,10 @@ public class Money implements Expression {
         this.currnecy = currnecy;
     }
 
+    public String currency() {
+        return currnecy;
+    }
+
     public static Money dollar(int amount) {
         return new Money(amount, "USD");
     }
@@ -18,16 +22,17 @@ public class Money implements Expression {
     }
 
     public Expression plus(Money addend) {
-        return new Money(amount + addend.amount, currnecy);
+        return new Sum(this, addend);
     }
 
     public Money times(int multiplier) {
         return new Money(amount * multiplier, currnecy);
     }
 
-    public String currency() {
-        return currnecy;
+    public Money reduce(String to) {
+        return this;
     }
+
 
     @Override
     public boolean equals(Object o) {

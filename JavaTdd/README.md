@@ -15,7 +15,7 @@ $ ./gradlew test
 - [ ]  $5 + $5에서 Money 반환하기
 - [ ]  Bank.reduce(Money)
 - [ ]  Money에 대한 통화 변환을 수행하는 Reduce
-- [ ]  Reduce(Bank, String)
+- [X]  Reduce(Bank, String)
 - [ ]  Sum.plus
 - [ ]  Expression.times
 - [ ]  $5 X 2 = $10
