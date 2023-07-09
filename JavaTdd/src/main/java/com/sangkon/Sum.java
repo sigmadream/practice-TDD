@@ -1,12 +1,20 @@
 package com.sangkon;
 
 public class Sum implements Expression {
-    protected Money augend;
-    protected Money addend;
+    protected Expression augend;
+    protected Expression addend;
 
-    public Sum(Money augend, Money addend) {
+    public Sum(Expression augend, Expression addend) {
         this.augend = augend;
         this.addend = addend;
+    }
+
+    public Expression times(int multiplier) {
+        return new Sum(augend.times(multiplier), addend.times(multiplier));
+    }
+
+    public Expression plus(Expression addend) {
+        return null;
     }
 
     public Money reduce(Bank bank, String to) {
