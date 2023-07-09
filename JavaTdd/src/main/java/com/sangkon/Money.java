@@ -1,6 +1,6 @@
 package com.sangkon;
 
-public class Money {
+public class Money implements Expression {
     protected int amount;
     protected String currnecy;
 
@@ -8,7 +8,6 @@ public class Money {
         this.amount = amount;
         this.currnecy = currnecy;
     }
-
 
     public static Money dollar(int amount) {
         return new Money(amount, "USD");
@@ -18,6 +17,9 @@ public class Money {
         return new Money(amount, "CHF");
     }
 
+    public Expression plus(Money addend) {
+        return new Money(amount + addend.amount, currnecy);
+    }
 
     public Money times(int multiplier) {
         return new Money(amount * multiplier, currnecy);
@@ -35,9 +37,6 @@ public class Money {
 
     @Override
     public String toString() {
-        return "Money{" +
-                "amount=" + amount +
-                ", currnecy='" + currnecy + '\'' +
-                '}';
+        return "Money{" + "amount=" + amount + ", currnecy='" + currnecy + '\'' + '}';
     }
 }
