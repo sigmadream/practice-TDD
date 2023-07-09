@@ -2,15 +2,15 @@ package com.sangkon;
 
 public class Money implements Expression {
     protected int amount;
-    protected String currnecy;
+    protected String currency;
 
     public Money(int amount, String currnecy) {
         this.amount = amount;
-        this.currnecy = currnecy;
+        this.currency = currnecy;
     }
 
     public String currency() {
-        return currnecy;
+        return currency;
     }
 
     public static Money dollar(int amount) {
@@ -26,22 +26,23 @@ public class Money implements Expression {
     }
 
     public Money times(int multiplier) {
-        return new Money(amount * multiplier, currnecy);
+        return new Money(amount * multiplier, currency);
     }
 
-    public Money reduce(String to) {
-        return this;
+    public Money reduce(Bank bank, String to) {
+        int rate = bank.rate(currency, to);
+        return new Money(amount / rate, to);
     }
 
 
     @Override
     public boolean equals(Object o) {
         Money money = (Money) o;
-        return amount == money.amount && currency().equals(money.currnecy);
+        return amount == money.amount && currency().equals(money.currency);
     }
 
     @Override
     public String toString() {
-        return "Money{" + "amount=" + amount + ", currnecy='" + currnecy + '\'' + '}';
+        return "Money{" + "amount=" + amount + ", currnecy='" + currency + '\'' + '}';
     }
 }
